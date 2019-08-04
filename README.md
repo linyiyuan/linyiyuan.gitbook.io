@@ -12,7 +12,7 @@
 
 # 个人标签
 
-`PHP后端开发`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql`
+`PHP后端开发`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统`
 
 # 联系信息
 
@@ -31,4 +31,3 @@
 ```
 
 > **关于GitBook的安装和使用 ➡️ [https://www.jianshu.com/p/1f78d8018ea7](https://www.jianshu.com/p/1f78d8018ea7)**
-
