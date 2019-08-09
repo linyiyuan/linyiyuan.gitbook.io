@@ -7,9 +7,9 @@
    
 
 ## Part II - PHP开发笔记
-      *  Laravel框架
-        * [Laravel常见错误指南](laravel/Laravel常见错误指南.md)
-        * [Laravel框架给多个视图分配数据(5.5适用)](laravel/Laravel框架给多个视图分配数据.md)
+   *  Laravel框架
+      * [Laravel常见错误指南](laravel/Laravel常见错误指南.md)
+      * [Laravel框架给多个视图分配数据(5.5适用)](laravel/Laravel框架给多个视图分配数据.md)
 
 ## Part III - Mysql开发笔记
 
