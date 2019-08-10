@@ -12,7 +12,7 @@
   * [PHP7.0版本新特性](php/PHP版本新特性/PHP7.0版本新特性.md)
   * [PHP7.1版本新特性](php/PHP版本新特性/PHP7.1版本新特性.md)
   * [PHP7.2版本新特性](php/PHP版本新特性/PHP7.2版本新特性.md)
-* [PSR规范](php/PSR规范/Readme)
+* [PSR规范](php/PSR规范/Readme.md)
   * [PSR-0](php/PSR规范/PSR-0.md)
   * [PSR-1](php/PSR规范/PSR-1.md)
   * [PSR-2](php/PSR规范/PSR-2.md)
