@@ -1,6 +1,6 @@
 {
 	"gitbook": "3.x.x",
-	"plugins": ["favicon", "yahei", "github", "autotheme", "search-pro", "advanced-emoji ",  "prism", "-highlight", "github-buttons", "splitter", "-sharing", "sharing-plus",
+	"plugins": ["favicon", "yahei", "github", "autotheme", "search-pro", "prism", "-highlight", "github-buttons", "splitter", "-sharing", "sharing-plus",
 	 "tbfed-pagefooter", "chapter-fold",  "book-summary-scroll-position-saver", "advanced-emoji", "ga", "baidu", "donate", "anchors", "anchor-navigation-ex", "sitemap-general",
 	  "copy-code-button", "mygitalk", "multipart"],
 	"pluginsConfig": {
@@ -110,11 +110,11 @@
 			}
 		},
 		"mygitalk": {
-			"clientID": "608e351b48e4d0a3a528",
-			"clientSecret": "c4427860abc972f5a3c206757e304654256d4892",
-			"repo": "myBook",
-			"owner": "JoeyBling",
-			"admin": ["JoeyBling"],
+			"clientID": "7ffe967b575d0e07d3f3",
+			"clientSecret": "5351d3f657e6961cf2ff26e37a7c90d82d3010f0",
+			"repo": "linyiyuan.gitbook.io",
+			"owner": "linyiyuan",
+			"admin": ["linyiyuan"],
 			"distractionFreeMode": false
 		}
 	},
