@@ -40,9 +40,63 @@ listen.group = www-data
 listen.allowed_clients = 127.0.0.1
 ```
 
+6. 处理nice(2)的进程优先级别-19(最高)到20(最低)
+```
+ process.priority = -19
+```
+
+7. php-fpm进程启动模式
+```
+pm = dynamic                      -- 进程模式(dynamic static ondemand)
+
+pm.max_children = 16              -- 同一时刻能够存货的最大子进程的数量(static时有效)
+ 
+pm.start_servers = 10             -- 在启动时启动的子进程数量
+pm.min_spare_servers = 1          -- 处于空闲"idle"状态的最小子进程，如果空闲进程数量小于这个值，那么相应的子进程会被创建
+pm.min_spare_servers = 10         -- 最大空闲子进程数量，空闲子进程数量超过这个值，那么相应的子进程会被杀掉。
+
+pm.process_idle_timeout = 10s;    -- 请求超时数
+pm.max_requests = 500             -- 最大请求数
+```
+
+8. 配置一个URI，以便查看fpm状态页
+```
+状态页描述：
+　　accepted conn: 该进程池接受的请求数量
+　　pool: 进程池的名字
+　　process manager: 进程管理，就是配置中pm指令，可以选择值static，dynamic，ondemand
+　　idle processes: 空闲进程数量
+　　active processes: 当前活跃的进程数量
+　　total processes: 总的进程数量=idle+active
+　　max children reached: 达到最大子进程的次数，达到进程的限制，当pm试图开启更多的子进程的时候(仅当pm工作在dynamic时)
+　　
+pm.status_path = /status
+```
+
+9. FPM 监控页面的ping网址
+```
+ping.path = /ping   -- 可以用于外部检测 fpm 是否存活并且可以相应请求，必须以斜线(/)开头。
+```
+
+10. 设定访问日志的格式
+```
+access.log = log/$pool.access.log  -- 相对比于nginx 的 access.log，此日志记录的信息更利于做性能上的分析，可以记录 cpu, memory,time　
+
+access.format = "%R - %u %t \"%m %r%Q%q\" %s %f %{mili}d %{kilo}M %C%%"
+```
+
+11. 记录慢请求日志/慢日志请求超时时间
+```
+slowlog = log/$pool.log.slow
+request_slowlog_timeout = 0
+```
+
+12. 终止请求超时时间，在 worker　进程杀掉之后，提供单个请求的超时时间
+```
+request_terminate_timeout = 0
+```
 
 
-
-
+## 启动模式详解
 
 
