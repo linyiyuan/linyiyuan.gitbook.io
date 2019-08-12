@@ -1,0 +1,936 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Composer概念解析 · Choice→選の开发笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Choice→選">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-yahei/yahei.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mygitalk/mygitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Composer使用技巧.html" />
+    
+    
+    <link rel="prev" href="Composer简述.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"linyiyuan","repo":"myBook","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Part I - 项目简介</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    项目简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Summary.html">
+            
+                <a href="../../Summary.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    项目导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <a target="_blank" href="https://github.com/linyiyuan">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    开源项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <a target="_blank" href="http://resume.linyiyuan.top">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    个人简历
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II - 开发笔记</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Readme.html">
+            
+                <a href="../Readme.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    PHP 相关笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../PSR规范/Readme.html">
+            
+                <a href="../PSR规范/Readme.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    PSR规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="../PSR规范/PSR-0.html">
+            
+                <a href="../PSR规范/PSR-0.html">
+            
+                    
+                        <b>2.1.1.1.</b>
+                    
+                    PSR-0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="../PSR规范/PSR-1.html">
+            
+                <a href="../PSR规范/PSR-1.html">
+            
+                    
+                        <b>2.1.1.2.</b>
+                    
+                    PSR-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="../PSR规范/PSR-2.html">
+            
+                <a href="../PSR规范/PSR-2.html">
+            
+                    
+                        <b>2.1.1.3.</b>
+                    
+                    PSR-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="../PSR规范/PSR-3.html">
+            
+                <a href="../PSR规范/PSR-3.html">
+            
+                    
+                        <b>2.1.1.4.</b>
+                    
+                    PSR-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="../PSR规范/PSR-4.html">
+            
+                <a href="../PSR规范/PSR-4.html">
+            
+                    
+                        <b>2.1.1.5.</b>
+                    
+                    PSR-4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Readme.html">
+            
+                <a href="Readme.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    Composer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="类的自动加载.html">
+            
+                <a href="类的自动加载.html">
+            
+                    
+                        <b>2.1.2.1.</b>
+                    
+                    类的自动加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="Composer简述.html">
+            
+                <a href="Composer简述.html">
+            
+                    
+                        <b>2.1.2.2.</b>
+                    
+                    Composer简述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.2.3" data-path="Composer概念解析.html">
+            
+                <a href="Composer概念解析.html">
+            
+                    
+                        <b>2.1.2.3.</b>
+                    
+                    Composer概念解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.4" data-path="Composer使用技巧.html">
+            
+                <a href="Composer使用技巧.html">
+            
+                    
+                        <b>2.1.2.4.</b>
+                    
+                    Composer使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.5" data-path="Composer自动加载原理.md">
+            
+                <span>
+            
+                    
+                        <b>2.1.2.5.</b>
+                    
+                    Composer自动加载原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../laravel/Readme.html">
+            
+                <a href="../laravel/Readme.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    Laravel框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1" data-path="../laravel/Laravel常见错误指南.html">
+            
+                <a href="../laravel/Laravel常见错误指南.html">
+            
+                    
+                        <b>2.1.3.1.</b>
+                    
+                    Laravel常见错误指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.2" data-path="../laravel/Laravel框架给多个视图分配数">
+            
+                <span>
+            
+                    
+                        <b>2.1.3.2.</b>
+                    
+                    Laravel框架给多个视图分配数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../PHP优化配置/Readme.html">
+            
+                <a href="../PHP优化配置/Readme.html">
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    PHP优化配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.4.1" data-path="../PHP优化配置/PHP-FPM配置详解.html">
+            
+                <a href="../PHP优化配置/PHP-FPM配置详解.html">
+            
+                    
+                        <b>2.1.4.1.</b>
+                    
+                    PHP-FPM配置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../PHP版本新特性/Readme.html">
+            
+                <a href="../PHP版本新特性/Readme.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    PHP版本新特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.5.1" data-path="../PHP版本新特性/PHP7.0版本新特性.html">
+            
+                <a href="../PHP版本新特性/PHP7.0版本新特性.html">
+            
+                    
+                        <b>2.1.5.1.</b>
+                    
+                    PHP7.0版本新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.2" data-path="../PHP版本新特性/PHP7.1版本新特性.md">
+            
+                <span>
+            
+                    
+                        <b>2.1.5.2.</b>
+                    
+                    PHP7.1版本新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.3" data-path="../PHP版本新特性/PHP7.2版本新特性.md">
+            
+                <span>
+            
+                    
+                        <b>2.1.5.3.</b>
+                    
+                    PHP7.2版本新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../mysql/Readme.md">
+            
+                <span>
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Mysql开发笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../mysql/Readme.md">
+            
+                <span>
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Redis开发笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../mysql/Readme.md">
+            
+                <span>
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Linux开发笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part III - 开发工具</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Composer概念解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#packagist"><b>1. </b>packagist</a></li><li><span class="title-icon "></span><a href="#composerjson-&#x6587;&#x4EF6;&#x548C;vendor&#x76EE;&#x5F55;"><b>2. </b>composer.json &#x6587;&#x4EF6;&#x548C;vendor&#x76EE;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;require-key"><b>3. </b>&#x5173;&#x4E8E;require Key</a></li><li><span class="title-icon "></span><a href="#&#x5305;&#x540D;&#x79F0;"><b>4. </b>&#x5305;&#x540D;&#x79F0;</a></li><li><span class="title-icon "></span><a href="#&#x5305;&#x7248;&#x672C;"><b>5. </b>&#x5305;&#x7248;&#x672C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7248;&#x672C;&#x7EA6;&#x675F;"><b>5.1. </b>&#x7248;&#x672C;&#x7EA6;&#x675F;</a></li><li><span class="title-icon "></span><a href="#&#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7248;&#x672C;&#xFF08;&#x6CE2;&#x6D6A;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;"><b>5.2. </b>&#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7248;&#x672C;&#xFF08;&#x6CE2;&#x6D6A;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x7A33;&#x5B9A;&#x6027;"><b>5.3. </b>&#x7A33;&#x5B9A;&#x6027;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;"><b>6. </b>&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;</a></li><li><span class="title-icon "></span><a href="#composerlock---&#x9501;&#x6587;&#x4EF6;"><b>7. </b>composer.lock - &#x9501;&#x6587;&#x4EF6;</a></li></ul></div><a href="#packagist" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="packagist"><a name="packagist" class="anchor-navigation-ex-anchor" href="#packagist"><i class="fa fa-link" aria-hidden="true"></i></a>1. packagist</h1>
+<p><a href="https://packagist.org/" target="_blank">packagist</a> &#x662F; Composer &#x7684;&#x4E3B;&#x8981;&#x8D44;&#x6E90;&#x5E93;&#x3002; &#x4E00;&#x4E2A; Composer &#x7684;&#x5E93;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x7684;&#x6E90;&#xFF1A;&#x8BB0;&#x5F55;&#x4E86;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5305;&#x7684;&#x5730;&#x65B9;&#x3002;Packagist &#x7684;&#x76EE;&#x6807;&#x662F;&#x6210;&#x4E3A;&#x5927;&#x5BB6;&#x4F7F;&#x7528;&#x5E93;&#x8D44;&#x6E90;&#x7684;&#x4E2D;&#x592E;&#x5B58;&#x50A8;&#x5E73;&#x53F0;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4F60;&#x53EF;&#x4EE5; require &#x90A3;&#x91CC;&#x7684;&#x4EFB;&#x4F55;&#x5305;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x8BBF;&#x95EE; packagist website (<a href="http://packagist.org/" target="_blank">packagist.org</a>)&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6D4F;&#x89C8;&#x548C;&#x641C;&#x7D22;&#x8D44;&#x6E90;&#x5305;&#x3002;</p>
+<h1 id="composerjson-&#x6587;&#x4EF6;&#x548C;vendor&#x76EE;&#x5F55;"><a name="composerjson-&#x6587;&#x4EF6;&#x548C;vendor&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#composerjson-&#x6587;&#x4EF6;&#x548C;vendor&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>2. composer.json &#x6587;&#x4EF6;&#x548C;vendor&#x76EE;&#x5F55;</h1>
+<p>&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528; Composer&#x83B7;&#x53D6;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A; <code>composer.json</code>&#x6587;&#x4EF6;&#x751F;&#x547D;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x4E86;&#x9879;&#x76EE;&#x7684;&#x4F9D;&#x8D56;&#x548C;&#x5176;&#x5B83;&#x7684;&#x4E00;&#x4E9B;&#x5143;&#x6570;&#x636E;&#x3002;
+<code>vendor</code>&#x76EE;&#x5F55;&#x4E0B;&#x5B58;&#x653E;&#x62C9;&#x4E0B;&#x6765;&#x7684;<code>composer</code>&#x7EC4;&#x4EF6;&#x5305;&#x3002;</p>
+<h1 id="&#x5173;&#x4E8E;require-key"><a name="&#x5173;&#x4E8E;require-key" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;require-key"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5173;&#x4E8E;require Key</h1>
+<p>&#x7B2C;&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;&#xFF08;&#x5E76;&#x4E14;&#x5F80;&#x5F80;&#x53EA;&#x9700;&#x8981;&#x505A;&#x8FD9;&#x4E00;&#x4EF6;&#x4E8B;&#xFF09;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;<code>composer.json</code>&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A; <code>require key</code> &#x7684;&#x503C;&#x3002;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x7684;&#x544A;&#x8BC9; Composer &#x4F60;&#x7684;&#x9879;&#x76EE;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x54EA;&#x4E9B;&#x5305;&#x3002;</p>
+<pre class="language-"><code>{
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;1.0.*&quot;
+    }
+}
+</code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C; <code>require</code>&#x9700;&#x8981;&#x4E00;&#x4E2A; &#x5305;&#x540D;&#x79F0; &#xFF08;&#x4F8B;&#x5982; <code>monolog/monolog</code>&#xFF09; &#x6620;&#x5C04;&#x5230; &#x5305;&#x7248;&#x672C; &#xFF08;&#x4F8B;&#x5982; 1.0.*&#xFF09; &#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<h1 id="&#x5305;&#x540D;&#x79F0;"><a name="&#x5305;&#x540D;&#x79F0;" class="anchor-navigation-ex-anchor" href="#&#x5305;&#x540D;&#x79F0;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5305;&#x540D;&#x79F0;</h1>
+<p>&#x5305;&#x540D;&#x79F0;&#x7531;&#x4F9B;&#x5E94;&#x5546;&#x540D;&#x79F0;&#x548C;&#x5176;&#x9879;&#x76EE;&#x540D;&#x79F0;&#x6784;&#x6210;&#x3002;&#x901A;&#x5E38;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x76F8;&#x540C;&#x7684;&#x9879;&#x76EE;&#x540D;&#x79F0;&#xFF0C;&#x800C;&#x4F9B;&#x5E94;&#x5546;&#x540D;&#x79F0;&#x7684;&#x5B58;&#x5728;&#x5219;&#x5F88;&#x597D;&#x7684;&#x89E3;&#x51B3;&#x4E86;&#x547D;&#x540D;&#x51B2;&#x7A81;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x4EBA;&#x521B;&#x5EFA;&#x540C;&#x6837;&#x540D;&#x4E3A; json &#x7684;&#x5E93;&#xFF0C;&#x800C;&#x4E4B;&#x540E;&#x5B83;&#x4EEC;&#x5C06;&#x88AB;&#x547D;&#x540D;&#x4E3A; <code>igorw/json</code>&#x548C; <code>seldaek/json</code>&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F15;&#x5165; <code>monolog/monolog</code>&#xFF0C;&#x4F9B;&#x5E94;&#x5546;&#x540D;&#x79F0;&#x4E0E;&#x9879;&#x76EE;&#x7684;&#x540D;&#x79F0;&#x76F8;&#x540C;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x552F;&#x4E00;&#x540D;&#x79F0;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x8FD9;&#x4E48;&#x505A;&#x3002;&#x5B83;&#x8FD8;&#x5141;&#x8BB8;&#x4EE5;&#x540E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x76F8;&#x5173;&#x9879;&#x76EE;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7EF4;&#x62A4;&#x7740;&#x4E00;&#x4E2A;&#x5E93;&#xFF0C;&#x8FD9;&#x5C06;&#x4F7F;&#x4F60;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x628A;&#x5B83;&#x5206;&#x79BB;&#x6210;&#x66F4;&#x5C0F;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<h1 id="&#x5305;&#x7248;&#x672C;"><a name="&#x5305;&#x7248;&#x672C;" class="anchor-navigation-ex-anchor" href="#&#x5305;&#x7248;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5305;&#x7248;&#x672C;</h1>
+<p>&#x5728;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5F15;&#x5165;&#x7684; monolog &#x7248;&#x672C;&#x6307;&#x5B9A;&#x4E3A; 1.0.*&#x3002;&#x8FD9;&#x8868;&#x793A;&#x4EFB;&#x4F55;&#x4ECE; 1.0 &#x5F00;&#x59CB;&#x7684;&#x5F00;&#x53D1;&#x5206;&#x652F;&#xFF0C;&#x5B83;&#x5C06;&#x4F1A;&#x5339;&#x914D; <code>1.0.0&#x3001;1.0.2</code>&#x6216;&#x8005;<code>1.0.20</code>&#x3002;</p>
+<h2 id="&#x7248;&#x672C;&#x7EA6;&#x675F;"><a name="&#x7248;&#x672C;&#x7EA6;&#x675F;" class="anchor-navigation-ex-anchor" href="#&#x7248;&#x672C;&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>5.1. &#x7248;&#x672C;&#x7EA6;&#x675F;</h2>
+<p>&#x53EF;&#x4EE5;&#x7528;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x6307;&#x5B9A;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x5B9E;&#x4F8B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x786E;&#x5207;&#x7684;&#x7248;&#x672C;&#x53F7;</td>
+<td>1.0.2</td>
+<td>&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5305;&#x7684;&#x786E;&#x5207;&#x7248;&#x672C;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8303;&#x56F4;</td>
+<td>&gt;=1.0 &gt;=1.0,<2.0>=1.0,<1.1,>=1.2</1.1,></2.0></td>
+<td>&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x7B26;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6709;&#x6548;&#x7684;&#x7248;&#x672C;&#x8303;&#x56F4;&#x3002;&#x6709;&#x6548;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&gt;&#x3001;&gt;=&#x3001;&lt;&#x3001;&lt;=&#x3001;!=&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x8303;&#x56F4;&#xFF0C;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;&#xFF0C;&#x8FD9;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x903B;&#x8F91;AND&#x5904;&#x7406;&#x3002;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#x7B26;&#x53F7;&#xFF0C;&#x5C06;&#x4F5C;&#x4E3A;&#x903B;&#x8F91;OR&#x5904;&#x7406;&#x3002;AND &#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E; OR&#x3002;</td>
+</tr>
+<tr>
+<td>&#x901A;&#x914D;&#x7B26;</td>
+<td>1.0.*</td>
+<td>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;<em>&#x6765;&#x6307;&#x5B9A;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;&#x3002;1.0.</em>&#x4E0E;&gt;=1.0,&lt;1.1&#x662F;&#x7B49;&#x6548;&#x7684;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td>~1.2</td>
+<td>&#x8FD9;&#x5BF9;&#x4E8E;&#x9075;&#x5FAA;&#x8BED;&#x4E49;&#x5316;&#x7248;&#x672C;&#x53F7;&#x7684;&#x9879;&#x76EE;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;~1.2&#x76F8;&#x5F53;&#x4E8E;&gt;=1.2,&lt;2.0&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7248;&#x672C;&#xFF08;&#x6CE2;&#x6D6A;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;"><a name="&#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7248;&#x672C;&#xFF08;&#x6CE2;&#x6D6A;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7248;&#x672C;&#xFF08;&#x6CE2;&#x6D6A;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>5.2. &#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7248;&#x672C;&#xFF08;&#x6CE2;&#x6D6A;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF09;</h2>
+<p><code>~</code> &#x6700;&#x597D;&#x7528;&#x4F8B;&#x5B50;&#x6765;&#x89E3;&#x91CA;&#xFF1A;<code>~1.2</code>&#x76F8;&#x5F53;&#x4E8E;<code>&gt;=1.2,&lt;2.0</code>&#xFF0C;&#x800C; <code>~1.2.3</code>&#x76F8;&#x5F53;&#x4E8E;<code>&gt;=1.2.3,&lt;1.3</code>&#x3002;&#x6B63;&#x5982;&#x4F60;&#x6240;&#x770B;&#x5230;&#x7684;&#x8FD9;&#x5BF9;&#x4E8E;&#x9075;&#x5FAA; &#x8BED;&#x4E49;&#x5316;&#x7248;&#x672C;&#x53F7; &#x7684;&#x9879;&#x76EE;&#x6700;&#x6709;&#x7528;&#x3002;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x6CD5;&#x662F;&#x6807;&#x8BB0;&#x4F60;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6700;&#x4F4E;&#x7248;&#x672C;&#xFF0C;&#x50CF; <code>~1.2</code>&#xFF08;&#x5141;&#x8BB8;1.2&#x4EE5;&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;2.0&#xFF09;&#x3002;&#x7531;&#x4E8E;&#x7406;&#x8BBA;&#x4E0A;&#x76F4;&#x5230;2.0&#x5E94;&#x8BE5;&#x90FD;&#x6CA1;&#x6709;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6548;&#x679C;&#x5F88;&#x597D;&#x3002;&#x4F60;&#x8FD8;&#x4F1A;&#x770B;&#x5230;&#x5B83;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x7528;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528; <code>~</code>&#x6307;&#x5B9A;&#x6700;&#x4F4E;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x5141;&#x8BB8;&#x7248;&#x672C;&#x53F7;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4F4D;&#x6570;&#x5B57;&#x4E0A;&#x5347;&#x3002;</p>
+<pre class="language-"><code>&#x6CE8;&#x610F;&#xFF1A; &#x867D;&#x7136; 2.0-beta.1 &#x4E25;&#x683C;&#x5730;&#x8BF4;&#x662F;&#x65E9;&#x4E8E; 2.0&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x6839;&#x636E;&#x7248;&#x672C;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C; &#x4F8B;&#x5982; ~1.2 &#x5374;&#x4E0D;&#x4F1A;&#x5B89;&#x88C5;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x3002;&#x5C31;&#x50CF;&#x524D;&#x9762;&#x6240;&#x8BB2;&#x7684; ~1.2 &#x53EA;&#x610F;&#x5473;&#x7740; .2 &#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F; 1. &#x90E8;&#x5206;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;
+</code></pre><h2 id="&#x7A33;&#x5B9A;&#x6027;"><a name="&#x7A33;&#x5B9A;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x7A33;&#x5B9A;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>5.3. &#x7A33;&#x5B9A;&#x6027;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x53EA;&#x6709;&#x7A33;&#x5B9A;&#x7684;&#x53D1;&#x884C;&#x7248;&#x624D;&#x4F1A;&#x88AB;&#x8003;&#x8651;&#x5728;&#x5185;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E5F;&#x60F3;&#x83B7;&#x5F97; RC&#x3001;beta&#x3001;alpha &#x6216; dev &#x7248;&#x672C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &#x7A33;&#x5B9A;&#x6807;&#x5FD7;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x5305;&#x505A; <code>&#x6700;&#x5C0F;&#x7A33;&#x5B9A;&#x6027;</code> &#x8BBE;&#x7F6E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x9010;&#x4E00;&#x8BBE;&#x7F6E;&#x3002;</p>
+<h1 id="&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;"><a name="&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;</h1>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;<code>install</code>&#x547D;&#x4EE4;</p>
+<pre class="language-"><code>composer install
+</code></pre><p>&#x63A5;&#x7740;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x8FD9;&#x5C06;&#x4F1A;&#x627E;&#x5230;&#x4F9D;&#x8D56;&#x7EC4;&#x4EF6;&#x7684;&#x6307;&#x5B9A;&#x7248;&#x672C;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4E0B;&#x8F7D;&#x5230; vendor &#x76EE;&#x5F55;&#x3002;</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x4F7F;&#x7528;Git&#x6765;&#x7BA1;&#x7406;&#x4F60;&#x7684;&#x9879;&#x76EE;&#xFF0C; &#x4F60;&#x53EF;&#x80FD;&#x8981;&#x6DFB;&#x52A0; vendor &#x5230;&#x4F60;&#x7684; .gitignore &#x6587;&#x4EF6;&#x4E2D;&#x3002; &#x4F60;&#x4E0D;&#x4F1A;&#x5E0C;&#x671B;&#x5C06;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x6DFB;&#x52A0;&#x5230;&#x4F60;&#x7684;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x3002;&#x53E6;&#x4E00;&#x4EF6;&#x4E8B;&#x662F; install &#x547D;&#x4EE4;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; composer.lock &#x6587;&#x4EF6;&#x5230;&#x4F60;&#x9879;&#x76EE;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+</blockquote>
+<h1 id="composerlock---&#x9501;&#x6587;&#x4EF6;"><a name="composerlock---&#x9501;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#composerlock---&#x9501;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>7. composer.lock - &#x9501;&#x6587;&#x4EF6;</h1>
+<p>&#x5728;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x540E;&#xFF0C;Composer &#x5C06;&#x628A;&#x5B89;&#x88C5;&#x65F6;&#x786E;&#x5207;&#x7684;<code>&#x7248;&#x672C;&#x53F7;</code>&#x5217;&#x8868;&#x5199;&#x5165; composer.lock &#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x5C06;&#x9501;&#x5B9A;&#x6539;&#x9879;&#x76EE;&#x7684;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x3002;</p>
+<pre class="language-"><code>&#x8BF7;&#x63D0;&#x4EA4;&#x4F60;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684; composer.lock &#xFF08;&#x5305;&#x62EC; composer.json&#xFF09;&#x5230;&#x4F60;&#x7684;&#x7248;&#x672C;&#x5E93;&#x4E2D;
+</code></pre><p>&#x8FD9;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; <code>install</code>&#x547D;&#x4EE4;&#x5C06;&#x4F1A;&#x68C0;&#x67E5;&#x9501;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5B83;&#x5C06;&#x4E0B;&#x8F7D;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;&#xFF08;&#x5FFD;&#x7565;<code>composer.json</code> &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#xFF09;&#x3002;</p>
+<p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x4EFB;&#x4F55;&#x4EBA;&#x5EFA;&#x7ACB;&#x9879;&#x76EE;&#x90FD;&#x5C06;&#x4E0B;&#x8F7D;&#x4E0E;&#x6307;&#x5B9A;&#x7248;&#x672C;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x4F9D;&#x8D56;&#x3002;&#x4F60;&#x7684;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x670D;&#x52A1;&#x5668;&#x3001;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x3001;&#x4F60;&#x56E2;&#x961F;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x3001;&#x6BCF;&#x4EF6;&#x4E8B;&#x3001;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x8F7B;&#x6F5C;&#x5728;&#x7684;&#x9519;&#x8BEF;&#x5BF9;&#x90E8;&#x7F72;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x5373;&#x4F7F;&#x4F60;&#x72EC;&#x81EA;&#x5F00;&#x53D1;&#x9879;&#x76EE;&#xFF0C;&#x5728;&#x516D;&#x4E2A;&#x6708;&#x5185;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x9879;&#x76EE;&#x65F6;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x5FC3;&#x7684;&#x7EE7;&#x7EED;&#x5DE5;&#x4F5C;&#xFF0C;&#x5373;&#x4F7F;&#x4ECE;&#x90A3;&#x65F6;&#x8D77;&#x4F60;&#x7684;&#x4F9D;&#x8D56;&#x5DF2;&#x7ECF;&#x53D1;&#x5E03;&#x4E86;&#x8BB8;&#x591A;&#x65B0;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<pre class="language-"><code>&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728; composer.lock &#x6587;&#x4EF6;&#xFF0C;Composer &#x5C06;&#x8BFB;&#x53D6; composer.json &#x5E76;&#x521B;&#x5EFA;&#x9501;&#x6587;&#x4EF6;&#x3002;
+</code></pre><p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4F9D;&#x8D56;&#x66F4;&#x65B0;&#x4E86;&#x65B0;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4F60;&#x5C06;&#x4E0D;&#x4F1A;&#x83B7;&#x5F97;&#x4EFB;&#x4F55;&#x66F4;&#x65B0;&#x3002;&#x6B64;&#x65F6;&#x8981;&#x66F4;&#x65B0;&#x4F60;&#x7684;&#x4F9D;&#x8D56;&#x7248;&#x672C;&#x8BF7;&#x4F7F;&#x7528; update &#x547D;&#x4EE4;&#x3002;&#x8FD9;&#x5C06;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x5339;&#x914D;&#x7684;&#x7248;&#x672C;&#xFF08;&#x6839;&#x636E;&#x4F60;&#x7684; composer.json &#x6587;&#x4EF6;&#xFF09;&#x5E76;&#x5C06;&#x65B0;&#x7248;&#x672C;&#x66F4;&#x65B0;&#x8FDB;&#x9501;&#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code>compose update
+</code></pre><p>&#x5982;&#x679C;&#x53EA;&#x60F3;&#x5B89;&#x88C5;&#x6216;&#x66F4;&#x65B0;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x3002;</p>
+<pre class="language-"><code>compose update monolog/monolog
+</code></pre><p>&#x8FD8;&#x6709;&#x66F4;&#x591A;&#x5173;&#x4E8E;composer&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x63A8;&#x8350;&#x67E5;&#x770B;&#xFF1A;</p>
+<p><a href="http://docs.phpcomposer.com/" target="_blank">phpcomposer&#x4E2D;&#x6587;&#x6587;&#x6863;</a>
+<a href="http://composer.json.jolicode.com/" target="_blank">composer&#x547D;&#x4EE4;&#x5168;&#x89E3;</a></p>
+<p><footer class="page-footer"><span class="copyright">Copyright &#xA9; <a href="https://linyiyuan.github.io" target="_blank">Choice&#x2192;&#x9078;&#x306E;&#x535A;&#x5BA2;</a> 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-08-12 11:30:10
+</span></footer><div id="gitalk-container" class="gitbook-plugin-mygitalk"></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Composer简述.html" class="navigation navigation-prev " aria-label="Previous page: Composer简述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Composer使用技巧.html" class="navigation navigation-next " aria-label="Next page: Composer使用技巧">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Composer概念解析","level":"2.1.2.3","depth":3,"next":{"title":"Composer使用技巧","level":"2.1.2.4","depth":3,"path":"php/composer/Composer使用技巧.md","ref":"php/composer/Composer使用技巧.md","articles":[]},"previous":{"title":"Composer简述","level":"2.1.2.2","depth":3,"path":"php/composer/Composer简述.md","ref":"php/composer/Composer简述.md","articles":[]},"dir":"ltr"},"config":{"plugins":["favicon","yahei","github","autotheme","search-pro","prism","-highlight","github-buttons","splitter","-sharing","sharing-plus","tbfed-pagefooter","chapter-fold","book-summary-scroll-position-saver","advanced-emoji","ga","baidu","donate","anchors","anchor-navigation-ex","sitemap-general","copy-code-button","mygitalk","multipart"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy <a href='https://linyiyuan.github.io' target='_blank'>Choice→選の博客</a> 2019","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/linyiyuan"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/myBook/assets/alipay.jpeg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"/myBook/assets/weixin.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://zhousiwei.gitee.io/myBook/"},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"github-buttons":{"buttons":[{"user":"linyiyuan","repo":"myBook","type":"star","size":"small","count":true}]},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-142790104-1"},"mygitalk":{"flipMoveOptions":{},"clientID":"7ffe967b575d0e07d3f3","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["linyiyuan"],"createIssueManually":false,"distractionFreeMode":false,"repo":"linyiyuan.gitbook.io","owner":"linyiyuan","enableHotKey":true,"clientSecret":"5351d3f657e6961cf2ff26e37a7c90d82d3010f0","pagerDirection":"last","labels":["Gitalk"]},"autotheme":{"night":[20,21,22,23,0,1,2,3,4,5],"sepia":[6,7,8,18,19,19],"white":[9,10,11,12,13,14,15,16,17]},"baidu":{"token":"a2e394cc17acd341b904fe377bb0d7c6"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"Choice→選","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Choice→選の开发笔记","language":"zh-hans","links":{},"gitbook":"3.x.x","description":"Choice→選の开发笔记"},"file":{"path":"php/composer/Composer概念解析.md","mtime":"2019-08-12T03:30:10.831Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T09:14:57.843Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-autotheme/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
