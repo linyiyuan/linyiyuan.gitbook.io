@@ -27,7 +27,7 @@
 		"github-buttons": {
 			"buttons": [{
 				"user": "linyiyuan",
-				"repo": "myBook",
+				"repo": "linyiyuan.gitbook.io",
 				"type": "star",
 				"size": "small",
 				"count": true
@@ -98,7 +98,7 @@
 			}
 		},
 		"sitemap-general": {
-			"prefix": "https://zhousiwei.gitee.io/myBook/"
+			"prefix": "https://github.com/linyiyuan/linyiyuan.gitbook.io"
 		},
 		"favicon": {
 			"shortcut": "assets/images/favicon.ico",
