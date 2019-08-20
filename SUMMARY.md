@@ -44,6 +44,9 @@
 * [Mysql开发笔记](mysql/Readme.md)
 * [Redis开发笔记](mysql/Readme.md)
 * [Linux开发笔记](mysql/Readme.md)
+* [算法开发笔记](algorithm/Readme.md)
+  * [LeetCode每日一题](algorithm/leetcode/Readme.md)
+    * 
 
 ## Part III - 开发工具
 

@@ -27,4 +27,6 @@
 <url> <loc>https://github.com/linyiyuan/php/PHP优化配置/PHP-FPM配置详解.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://github.com/linyiyuan/php/PHP版本新特性/Readme.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://github.com/linyiyuan/php/PHP版本新特性/PHP7.0版本新特性.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://github.com/linyiyuan/algorithm/Readme.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://github.com/linyiyuan/algorithm/leetcode/Readme.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
