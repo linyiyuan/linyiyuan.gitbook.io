@@ -6,6 +6,7 @@
 * [项目导航](Summary.md)
 * [开源项目](https://github.com/linyiyuan)
 * [个人简历](http://resume.linyiyuan.top)
+* [个人简历(PDF版)](http://images.linyiyuan.top/PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%9E%97%E7%9B%8A%E8%BF%9C.pdf)
 
 ## Part II - 开发笔记
 * [PHP 开发笔记](php/Readme.md)
