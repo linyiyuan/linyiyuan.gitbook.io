@@ -11,8 +11,8 @@
 ## Part II - 开发笔记
 * [PHP 开发笔记](php/Readme.md)
   * [PHP知识](php/PHP知识/Readme.md)
-    * [关于Yield的认识（上）](php/PHP知识/Yield生成器（上）.md)
-    * [关于Yield的认识（下）](php/PHP知识/Yield生成器（下）.md)
+    * [Yield生成器（上）](php/PHP知识/Yield生成器（上）.md)
+    * [Yield生成器（下）](php/PHP知识/Yield生成器（下）.md)
   * [PSR规范](php/PSR规范/Readme.md)
     * [PSR-0](php/PSR规范/PSR-0.md)
     * [PSR-1](php/PSR规范/PSR-1.md)
