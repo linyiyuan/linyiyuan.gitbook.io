@@ -1,4 +1,7 @@
-# Readme
-
-
-
+ * [OOP知识](php/oop/Readme.md)
+    * [构造方法和析构方法](php/oop/构造方法和析构方法.md)
+    * [重载新的方法（parent::)](php/oop/重载新的方法之parent.md)
+    * [static和const关键字](php/oop/static和const关键字.md)
+    * [抽象方法和抽象类](php/oop/抽象方法和抽象类.md)
+    * [接口(interface)](php/oop/接口.md)
+    * [常用的魔术方法](php/oop/常用的魔术方法.md)
