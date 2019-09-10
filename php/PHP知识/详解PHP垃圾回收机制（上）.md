@@ -146,9 +146,11 @@ xdebug_debug_zval('c');
 $a 与 $b 各拥有一个 `zval_struct` 容器，并且其中的 `value` 都指向同一个 `zend_reference` 结构，`zend_reference` 内嵌一个 `val` 结构， 指向同一个 `zend_string`，**字符串的内容**就储存在其中。
 
 而 $c 也拥有一个 `zval_struct`，而它的 value 在初始化的时候可以直接指向上面提到的 `zend_string` ，这样在拷贝时就不会产生复制。
+
 ![](http://images.linyiyuan.top/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190910094943.png)
 
 然后我们运行代码：
+
 ![](http://images.linyiyuan.top/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190910095938.png)
 
 从图中不难发现，$a跟$b 的`refcount` 为2，$c为1，我们根据第五点以及第六点可以知道 $a跟$b都指向同一个 `zend_reference` 所以他们的refcount为2  而`zend_reference` 的结构包含gc 其gc 就是` _zend_refcounted_h `的结构体 主要作用是引用计数以及标记变量的类别
