@@ -53,6 +53,8 @@
 * [Mysql开发笔记](mysql/Readme.md)
 * [Redis开发笔记](mysql/Readme.md)
 * [Linux开发笔记](mysql/Readme.md)
+  * [常用命令指南](linux/shell/常用命令指南.md)
+  * [常用命令详解](linux/shell/Readme.md)
 * [Docker开发笔记](docker/Readme.md)
 ## Part III - 书签素材
 * [图片素材](README.md)
