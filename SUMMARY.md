@@ -51,12 +51,18 @@
     * [PHP7.2版本新特性](php/PHP版本新特性/PHP7.2版本新特性.md)
   * [Swoole学习笔记](php/Swoole/Readme.md)
 * [Mysql开发笔记](mysql/Readme.md)
-* [Redis开发笔记](mysql/Readme.md)
+  * [MySQL数据库设计规范](mysql/MySQL数据库设计规范.md)
+  * [MySQL数据类型](mysql/MySQL数据类型.md)
+* [Redis开发笔记](redis/Readme.md)
 * [Linux开发笔记](linux/Readme.md)
   * [常用命令指南](linux/shell/常用命令指南.md)
   * [常用命令详解](linux/shell/Readme.md)
 * [Docker开发笔记](docker/Readme.md)
 
+## Part III - 算法笔记
+* [排序算法](algorithm/sort/Readme.md)
+  * [冒泡排序](algorithm/sort/冒泡排序.md)
+  * [选择排序](algorithm/sort/选择排序.md)
 
 
 
