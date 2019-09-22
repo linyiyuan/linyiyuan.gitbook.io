@@ -64,6 +64,7 @@
   * [冒泡排序](algorithm/sort/冒泡排序.md)
   * [选择排序](algorithm/sort/选择排序.md)
   * [插入排序](algorithm/sort/插入排序.md)
+  * [快速排序](algorithm/sort/快速排序.md)
 
 
 
