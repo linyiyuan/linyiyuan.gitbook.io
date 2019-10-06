@@ -13,7 +13,7 @@
 
 # 个人标签
 
-`PHP`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统` `Redis` `Swoole` `Workman`
+`PHP`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统` `Redis` `Swoole` `SDK接入开发` `Markdown`
 
 # 联系信息
 
