@@ -54,11 +54,15 @@
 * [Swoole开发笔记](swoole/Readme.md)
   * [框架导言](swoole/框架导言.md)
   * [编程须知](swoole/编程须知.md)
+  * [Server相关](swoole/server/Readme.md)
+    * [Method](swoole/server/Method.md)
+    * [Attribute](swoole/server/Attribute.md)
+    * [Option](swoole/server/Option.md)
+    * [Events](swoole/server/Events.md)
 * [Mysql开发笔记](mysql/Readme.md)
-  * [MySQL数据库设计规范](mysql/MySQL数据库设计规范.md)j
+  * [MySQL数据库设计规范](mysql/MySQL数据库设计规范.md)
   * [MySQL数据类型](mysql/MySQL数据类型.md)
 * [Redis开发笔记](redis/Readme.md)
-  *  
 * [Linux开发笔记](linux/Readme.md)
   * [常用命令指南](linux/shell/常用命令指南.md)
   * [常用命令详解](linux/shell/Readme.md)
