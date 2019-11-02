@@ -84,6 +84,38 @@ $server->set([
 
 请求期对象与普通`PHP`程序中的对象就是一样的。请求到来时创建，请求结束后销毁。
 
+## 事件启动顺序
+
+### 1. onStart
+
+在此事件之前`Server`已进行了如下操作
+
+*   已创建了`manager`进程
+*   已创建了`worker`子进程
+*   已监听所有`TCP/UDP/UnixSocket`端口，但未开始`Accept`连接和请求
+*   已监听了定时器
+
+接下来要执行
+
+*   主`Reactor`开始接收事件，客户端可以`connect`到`Server`
+
+> 在`onStart`中创建的**全局资源对象**不能在`Worker`进程中被使用，因为发生`onStart`调用时，worker进程已经创建好了
+> 新创建的对象在主进程内，`Worker`进程无法访问到此内存区域
+> 因此全局对象创建的代码需要放置在`Server::start`之前
+
+### 2. onWorkerStart
+
+此事件在`Worker`进程/`Task`进程启动时发生。这里创建的对象可以在进程生命周期内使用
+OnWorkerStart 跟Onstart 在不同进程内，所以是并发执行的，没有先后顺序
+
+### 3. onManagerStart
+
+`onManagerStart`触发时，说明：
+
+*   `Task`和`Worker`进程已创建
+*   `Master`进程状态不明，因为`Manager`与`Master`是并行的，`onManagerStart`回调发生是不能确定`Master`进程是否已就绪
+
+
 ## 运行流程图
 
 ![Swoole扩展架构图](https://wiki.swoole.com/static/uploads/swoole.jpg)
