@@ -59,6 +59,7 @@
     * [Attribute](swoole/Server/Attribute.md)
     * [Option](swoole/Server/Option.md)
     * [Events](swoole/Server/Events.md)
+  * [HttpServer](swoole/HttpServer/Readme.md)
   * [WebSocket](swoole/WebSocket/Readme.md)
 * [Mysql开发笔记](mysql/Readme.md)
   * [MySQL数据库设计规范](mysql/MySQL数据库设计规范.md)
