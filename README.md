@@ -13,14 +13,14 @@
 
 # 个人标签
 
-`PHP`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统` `Redis` `Swoole` `SDK接入开发` `Markdown`
+`PHP`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统` `Redis` `Swoole` `SDK接入开发` `Markdown` `ThinkPHP` `Docker` `Supervisor`
 
 # 联系信息
 
 - QQ：375133100
 - 微信：13211035441
 - 手机号码：13211035441
-- 邮箱地址：linyiyuann@163.com
+- 邮箱地址：linyiyuann@gmail.com
 
 # 安装运行
 
