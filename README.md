@@ -6,6 +6,7 @@
 - [个人博客：https://linyiyuan.github.io](https://linyiyuan.github.io)
 - [个人相册：http:album.linyiyuan.top](http://album.linyiyuan.top)
 - [个人简历：http://resume.linyiyuan.top](http://resume.linyiyuan.top)
+- [个人相册：http://album.linyiyuan.top](http://album.linyiyuan.top)
 - [个人简历(PDF版)](http://images.linyiyuan.top/PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%9E%97%E7%9B%8A%E8%BF%9C.pdf)
 - [GitHub地址：https://github.com/linyiyuan](https://github.com/linyiyuan)
 - [掘金地址：https://juejin.im/user/5c749f1951882561dd7b7e83](https://juejin.im/user/5c749f1951882561dd7b7e83)
