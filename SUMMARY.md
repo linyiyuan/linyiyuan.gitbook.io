@@ -74,6 +74,7 @@
 * [Docker开发笔记](docker/Readme.md)
 * [Function速查笔记](function/Readme.md)
   * [PHP速查笔记](function/PHP.md)
+  * [GIT速查笔记](function/GIT.md)
 
 ## Part III - 算法笔记
 * [算法基础](algorithm/Readme.md)
