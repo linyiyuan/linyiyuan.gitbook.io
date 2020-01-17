@@ -60,3 +60,6 @@
 
 21. 展示简化的commit历史:
     > git log --pretty=oneline --graph --decorate --all
+ 
+22. 切换分支:
+    > git checkout <分支名>
