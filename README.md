@@ -9,13 +9,12 @@
 - [个人相册：http://album.linyiyuan.top](http://album.linyiyuan.top)
 - [个人简历(PDF版)](http://images.linyiyuan.top/PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%9E%97%E7%9B%8A%E8%BF%9C.pdf)
 - [GitHub地址：https://github.com/linyiyuan](https://github.com/linyiyuan)
-- [掘金地址：https://juejin.im/user/5c749f1951882561dd7b7e83](https://juejin.im/user/5c749f1951882561dd7b7e83)
 - [知乎地址：https://www.zhihu.com/people/lin-yi-yuan-35-45/activities](https://www.zhihu.com/people/lin-yi-yuan-35-45/activities)
 - [微博地址：https://weibo.com/3118916401/](https://weibo.com/3118916401/)
 
 # 个人标签
 
-`PHP`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统` `Redis` `Swoole` `SDK接入开发` `Markdown` `ThinkPHP` `Docker` `Supervisor`
+`PHP`、`Laravel` 、`聚合支付`、`公众号开发`、`开源爱好者`、`Linux`、 `VueJs`、`极客` 、`Mysql` `CRM系统` `Redis` `Swoole` `SDK接入开发` `Markdown` `ThinkPHP` `Docker` `Supervisor` `ElementUI`
 
 # 联系信息
 
