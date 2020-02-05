@@ -3,28 +3,24 @@
 
 > NoSQL现在一般理解成非关系型数据库
 
-
-
 NoSql的优势
 	1.易拓展
 	2.大数据量，高性能
 	3.灵活的数据模型
 
 
-## Redis ##
-1.Redis 是一个开源的，内存中的数据结构存储系统，他可以用作数据库 缓存和消息中间件，它支持多种类型的数据结构 如字符串（string） 散列（hashes） 列表（lists） 集合（sets） 有序集合（sorted sets) 等数据类型
-
-
-2.Redis数据都是缓存在内存中，redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加到记录文件中
+## Redis
+1. Redis 是一个开源的，内存中的数据结构存储系统，他可以用作数据库 缓存和消息中间件，它支持多种类型的数据结构 如字符串（string） 散列（hashes） 列表（lists） 集合（sets） 有序集合（sorted sets) 等数据类
+2. Redis数据都是缓存在内存中，redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加到记录文件中
 
 
 ## Redis 常用的基本命令 ##
 
-	启动Redis服务器端
-		redis-cli
-	关闭Redis服务器端
-		redis-cli shutdown
-	
+1. 启动Redis服务器端
+	> redis-cli
+2. 关闭Redis服务器端
+	> redis-cli shutdown
+
 	1.删除键 del 键名 （返回的是删除的行数） 如果不存在返回0
 	
 	2.查找所有符合给定模式pattern 的key 
