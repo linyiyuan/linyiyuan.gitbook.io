@@ -69,6 +69,7 @@
   * [MySQL数据类型](mysql/MySQL数据类型.md)
 * [Redis开发笔记](redis/Readme.md)
   * [Redis介绍](redis/Redis介绍.md)
+  * [Redis字符串类型常用命令](redis/Redis字符串类型常用命令.md)
 * [Linux开发笔记](linux/Readme.md)
   * [常用命令指南](linux/shell/常用命令指南.md)
   * [常用命令详解](linux/shell/Readme.md)
