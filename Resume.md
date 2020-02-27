@@ -38,7 +38,7 @@
 - 开发环境 : Linux
 - 开发人数：独立开发
 - 开发框架：Yii2
-- 项目链接：Hps://web.ddz.dasheng.tv
+- 项目链接：https://web.ddz.dasheng.tv
   - 项目职责：
     1. 对项目进行功能的维护以及二次开发
     2. 完成上级指定的新功能开发，比如热度值的开发等
@@ -49,7 +49,7 @@
 - 开发环境 : Linux
 - 开发人数：独立开发
 - 开发框架：Laravel
-- 项目链接 : hps://web.nba.dasheng.tv/
+- 项目链接 : https://web.nba.dasheng.tv/
 - 项目职责：
     1. 负责后台页面与后台逻辑的实现，数据库结构设计和搭建
     2. 制定相应的前台API接口给前端技术人员
