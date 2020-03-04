@@ -77,7 +77,7 @@
 # 开源项目和作品
 
 ## 开源项目
-  - [Vue-admin-template](http://vue-admin.linyiyuan.top):
+- [Vue-admin-template](http://vue-admin.linyiyuan.top):
     - 简要：Vue-admin-template 基于Vue+Element开发的一套前后端分离项目的前端资源。 目前含有用户管理， 角色管理， 权限控制, 系统日志 的一个后台框架
     - 项目地址：[http://vue-admin.linyiyuan.top](http://vue-admin.linyiyuan.top) 
     

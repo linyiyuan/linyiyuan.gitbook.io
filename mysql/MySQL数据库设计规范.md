@@ -155,7 +155,7 @@ MySQL 数据库与 Oracle、 SQL Server 等数据库相比，有其内核上的�
 
 1. 【强制】InnoDB 表必须主键为 `id int/bigint auto_increment`，且主键值禁止被更新。
 2. 【建议】主键的名称以 `pk_` 开头，唯一键以 `uk_` 开头，普通索引以 `ix_` 开头，一律使用小写格式，以表名/字段的名称或缩写作为后缀。
-3. 【强制】InnoDB 和 MyISAM 存储引擎表，索引类型必须为 `BTREE`；MEMORY 表可以根据需要选择 `HASH` 或者 `BTREE` 类型索引。
+3. 【强制】InnoDB 和 MyISAM 存储引擎表，索引类型必须为 `BTREE`；MEMORY  表可以根据需要选择 `HASH` 或者 `BTREE` 类型索引。
 4. 【强制】单个索引中每个索引记录的长度不能超过 64KB。
 5. 【建议】单个表上的索引个数不能超过 7 个。
 6. 【建议】在建立索引时，多考虑建立联合索引，并把区分度最高的字段放在最前面。如列 `user_id` 的区分度可由 `select count(distinct user_id)` 计算出来。
@@ -251,8 +251,7 @@ MySQL 数据库与 Oracle、 SQL Server 等数据库相比，有其内核上的�
 1. 【强制】禁止跨 DB 的 join 语句。因为这样可以减少模块间耦合，为数据库拆分奠定坚实基础。
 2. 【强制】禁止在业务的更新类 SQL 语句中使用 join，比如 `update t1 join t2 …`。
 3. 【建议】不建议使用子查询，建议将子查询 SQL 拆开结合程序多次查询，或使用 join 来代替子查询。
-4. 【建议】线上环境，多表 join 不要超过 3 个表。
-5. 【建议】多表连接查询推荐使用别名，且 select 列表中要用别名引用字段，数据库.表格式，如 `select a from db1.table1 alias1 where …`。
+4. 【建议】线上环境，多表 join 不要超过 3 个表。\用别名，且 select 列表中要用别名引用字段，数据库.表格式，如 `select a from db1.table1 alias1 where …`。
 6. 【建议】在多表 join 中，尽量选取结果集较小的表作为驱动表，来 join 其它表。
 
 ### 2.2.3 事务
