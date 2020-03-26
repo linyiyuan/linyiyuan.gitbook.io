@@ -42,6 +42,8 @@
   * [Laravel框架](php/laravel/Readme.md)
     * [Laravel常见错误指南](php/laravel/Laravel常见错误指南.md)
     * [Laravel框架给多个视图分配数据](php/laravel/Laravel框架给多个视图分配数)
+  * [Laravel内核解析](php/laravel内核解析/Readme.md)
+    *  [详谈控制翻转和依赖注入](php/laravel内核解析/详谈控制翻转和依赖注入.md)
   * [PHP优化配置](php/PHP优化配置/Readme.md)
     * [了解PHP_FPM运行机制](php/PHP优化配置/了解PHP_FPM运行机制.md)
     * [PHP-FPM配置详解](php/PHP优化配置/PHP-FPM配置详解.md) 
