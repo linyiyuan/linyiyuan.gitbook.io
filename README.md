@@ -3,7 +3,7 @@
 &#160;&#160;&#160;&#160;欢迎来到`Choice→選`的开发笔记，最近在整理自己的一些学习笔记，刚好在github看到了这么一个工具，所以拿来总结自己所有的开发笔记以及一些知识点，面试技巧等，希望对你有用
 
 # 个人信息
-- [个人博客：https://linyiyuan.github.io](https://linyiyuan.github.io)
+- [个人博客：http://www.linyiyuan.top](http://www.linyiyuan.top)
 - [个人相册：http:album.linyiyuan.top](http://album.linyiyuan.top)
 - [个人简历：http://resume.linyiyuan.top](http://resume.linyiyuan.top)
 - [个人相册：http://album.linyiyuan.top](http://album.linyiyuan.top)
