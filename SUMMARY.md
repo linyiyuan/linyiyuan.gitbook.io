@@ -5,6 +5,7 @@
 * [项目简介](README.md)
 * [项目导航](Summary.md)
 * [开源项目](https://github.com/linyiyuan)
+* [个人博客](http://www.linyiyuan.top)
 * [个人相册](http://album.linyiyuan.top)
 * [个人简历(MD版本)](Resume.md)
 * [个人简历(WEB版)](http://resume.linyiyuan.top)
